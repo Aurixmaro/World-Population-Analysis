@@ -3,10 +3,10 @@
 This project uses data from the CIA World Factbook, which is a collection of statistics for all countries on Earth. Demographic data for the project comes from 2023
 
 The original dataset from the CIA World Factbook consisted of 261 rows, but I chose not to include data for territories such as:
-"Taiwan - the United Nations considers it represented by the People's Republic of China
-The Cook Islands and Niue, both states in free association with New Zealand which are members of several UN specialized agencies and have been recognized "full treaty-making capacity", but are neither member states nor non-member observer states.
-Dependencies (or dependent territories, dependent areas, dependencies) and Areas of Special Sovereignty (autonomous territories)
-Other countries recognized by the United Nations as not being self-governing" [2]
+<br>"Taiwan - the United Nations considers it represented by the People's Republic of China
+<br>The Cook Islands and Niue, both states in free association with New Zealand which are members of several UN specialized agencies and have been recognized "full treaty-making capacity", but are neither member states nor non-member observer states.
+<br>Dependencies (or dependent territories, dependent areas, dependencies) and Areas of Special Sovereignty (autonomous territories)
+<br>Other countries recognized by the United Nations as not being self-governing" [2]
 
 The final data set consists of 12 columns and 195 rows.
 
@@ -37,5 +37,6 @@ death_rate - death/1,000 population
 net_migration_rate - the ratio of people who left the country for another country.
 
 ####Bibliography
-[1] https://www.cia.gov/
-[2] https://www.worldometers.info/
+
+<br>[1] https://www.cia.gov/
+<br>[2] https://www.worldometers.info/
