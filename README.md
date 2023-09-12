@@ -1,6 +1,6 @@
 # World-population-analysis
 
-![R_chart_2](https://github.com/Aurixmaro/World-population-analysis/assets/143027570/7fbd2ef8-04b9-4e24-9c39-80deb924e1b7)
+![output](https://github.com/Aurixmaro/World-population-analysis/assets/143027570/6efb295b-0aa3-4813-bb67-f96f9bd74bdb)
 
 This project uses data from the CIA World Factbook, which is a collection of statistics for all countries on Earth. Demographic data for the project comes from 2023
 The original dataset from the CIA World Factbook consisted of 261 rows, but I chose not to include data for territories such as:
