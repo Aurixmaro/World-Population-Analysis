@@ -11,6 +11,8 @@ The original dataset from the CIA World Factbook consisted of 261 rows, but I ch
 
 The final data set consists of 12 columns and 195 rows.
 
+Tech Stack: Python, R, Excel, SQL.
+
 **Database:**
 
 id - identification number assigned to the country.
