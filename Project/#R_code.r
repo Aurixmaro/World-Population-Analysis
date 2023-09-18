@@ -33,7 +33,7 @@ ggplot(data, aes(x = reorder(Country, -Population), y = Population, fill = Count
 
 data <- data.frame(
   Population = c(1000, 9852, 11639, 21779, 31597, 34892, 39993, 54817, 74656, 80966),
-  Country = c("Holy See (Vatican City)", "India", "Nauru", "Tuvalu", "Palau", "Monaco", "San Marino", "Liechtenstein", "Saint Kitts and Nevis", "Dominica")
+   Country = c("Holy See (Vatican City)", "Nauru", "Tuvalu", "Palau", "Monaco", "San Marino", "Liechtenstein", "Saint Kitts and Nevis", "Dominica", "Marshall Islands")
 )
 result <- ggplot(data, aes(x = reorder(Country, Population), y = Population)) +
   geom_bar(stat = "identity", fill = "purple", color = "black") +
