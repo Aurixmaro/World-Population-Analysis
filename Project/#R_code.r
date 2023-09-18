@@ -144,3 +144,91 @@ chart <- ggplot(data, aes(x = reorder(Country, -BirthRate), y = BirthRate)) +
     axis.title = element_text(size = 12, face = "bold"),
     plot.title = element_text(size = 14, face = "bold")
   )
+
+#CHART 10
+
+death_rate_high <- data.frame(
+  Country = c("Lithuania", "Serbia", "Romania", "Latvia", "Bulgaria", "Ukraine", "Russia", "Estonia", "Croatia", "Hungary"),
+  DeathRate = c(15.17, 15.12, 14.92, 14.69, 14.31, 13.70, 13.27, 13.13, 12.98, 12.89)
+)
+
+chart_death_rate_high <- ggplot(death_rate_high, aes(x = reorder(Country, -DeathRate), y = DeathRate)) +
+  geom_bar(stat = "identity", position = position_dodge(), fill = "purple", color = "black", size = 1) +
+  geom_text(aes(label = sprintf("%.2f", DeathRate)), position = position_dodge(width = 0.9), vjust = -0.2, size = 3, fontface = "bold") +
+  labs(x = "Country", y = "death rate") +
+  ggtitle("Highest Mortality Rate - Worst") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10, face = "bold"),
+    axis.text.y = element_text(size = 10),
+    axis.title = element_text(size = 12, face = "bold"),
+    plot.title = element_text(size = 14, face = "bold")
+  )
+
+#CHART 11
+
+death_rate_low <- data.frame(
+  Country = c("Qatar", "UAE", "Kuwait", "Bahrain", "Oman", "Libya", "Saudi Arabia", "Jordan", "Brunei", "Iraq"),
+  DeathRate = c(1.42, 1.62, 2.27, 2.83, 3.21, 3.45, 3.45, 3.47, 3.85, 3.88)
+)
+
+chart_death_rate_low <- ggplot(death_rate_low, aes(x = reorder(Country, DeathRate), y = DeathRate)) +
+  geom_bar(stat = "identity", position = position_dodge(), fill = "purple", color = "black", size = 1) +
+  geom_text(aes(label = sprintf("%.2f", DeathRate)), position = position_dodge(width = 0.9), vjust = -0.2, size = 4, fontface = "bold") +
+  labs(x = "Country", y = "death_rate") +
+  ggtitle("Lowest Mortality Rate - Best") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10, face = "bold"),
+    axis.text.y = element_text(size = 10),
+    axis.title = element_text(size = 12, face = "bold"),
+    plot.title = element_text(size = 14, face = "bold")
+  )
+
+# CHART 12
+
+if (!requireNamespace("ggplot2", quietly = TRUE)) {
+  install.packages("ggplot2")
+}
+library(ggplot2)
+
+data <- data.frame(
+  Country = c("Syria", "Micronesia", "South Sudan", "Tonga", "Venezuela", "Maldives", "Equatorial Guinea", "Jordan", "Luxembourg", "Guam", "Monaco", "Nauru", "Burundi", "Eritrea", "Cyprus", "Moldova", "Australia", "Jamaica", "Saudi Arabia", "Samoa"),
+  Net_Migration_Rate = c(45.78, -20.92, 19.98, -18.06, 13.55, -12.80, 13.01, -10.99, 11.39, -10.94, 10.89, -10.15, 6.84, -9.38, 6.65, -8.80, 6.39, -7.42, 6.07, -7.19)
+)
+
+ggplot(data, aes(x = reorder(Country, Net_Migration_Rate), y = Net_Migration_Rate)) +
+  geom_bar(stat = "identity", fill = "purple", color = "black", size = 1) +  
+  geom_text(aes(label = Net_Migration_Rate), vjust = 0.5, size = 3, color = "black") +  
+  coord_flip() +
+  labs(x = "Country", y = "Net Migration Rate", title = "Net Migration Rate by Country") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 8)) 
+
+# CHART 13
+
+result <- data.frame(
+  Country = c(
+    "Bangladesh", "Japan", "Philippines", "Vietnam", "Germany", "Thailand",
+    "France", "United Kingdom", "Italy", "Kenya", "Korea, South", "Uganda",
+    "Spain", "Ukraine", "Iraq"
+  ),
+  Population = c(
+    167184465, 123719238, 116434200, 104799174, 84220184, 69794997,
+    68521974, 68138484, 61021855, 57052004, 51966948, 47729952, 47222613,
+    43306477, 41266109
+  )
+)
+
+colors <- rainbow(nrow(results))
+
+ggplot(results, aes(x = reorder(Country, -Population), y = Population, fill = Country)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = kolory) +
+  labs(title = "Countries with above average population and below average area",
+       x = "Countries", y = "Population") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(size = 12),  
+        axis.title.y = element_text(size = 10),  
+        axis.title.x = element_text(size = 10)) +  
+  scale_y_continuous(labels = scales::comma, limits = c(0, 2e8), breaks = seq(0, 2e8, by = 2e7))
